@@ -10,11 +10,17 @@ function getDogImage(breedInput) {
 
 function displayResults(responseJson){
   console.log(responseJson); 
-  //const dogArray = responseJson.message.map(pic => `<img src="${pic}" class="results-img">`);
+  if (responseJson.status === 'error'){
+    alert('Cannot find dog breed.');
+  }
+  else {
+    const randomDogBreed = `<img src="${responseJson.message}" class="results-img">`;
+    $('.results').html(randomDogBreed);
+  }
 
-  const randomDogBreed = `<img src="${responseJson.message}" class="results-img">`;
-  $('.results').html(randomDogBreed);
+  
 }
+
   
 
 
