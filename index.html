@@ -13,9 +13,13 @@
     <h1>Dog Library</h1>
     <form id="js-dog-images-form">
         <label for="dog-images-entry">How many dogs pictures do you want to see?</label>
-        <input type="text" name="dog-images-entry" class="js-dog-images-entry" placeholder="e.g. 10">
+        <input type="number" name="dog-images-entry" class="js-dog-images-entry" placeholder="e.g. 10" max="50" required>
         <button type="submit">Get dog images</button>
     </form>
+    <section class="results hidden">
+        <h2>Look at these dogs!</h2>
+        <img class="results-img" alt="placeholder">
+    </section>
 
 
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/cuid/1.3.8/browser-cuid.min.js"></script>
