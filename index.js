@@ -7,20 +7,17 @@ function getDogImage(defaultNum) {
     .then(responseJson => displayResults(responseJson));
 }
 
-/*/USER INPUT # OF IMAGES
-function numberOfImages(num){
-  console.log(`Retrieving ${num} dog pictures.`);
-  STORE.push(num, getDogImage());
-} */
-
 function displayResults(responseJson){
-  console.log(responseJson);
-  $('.results-img').replaceWith(
-    `<img src="${responseJson.message}" class="results-img">`
-  );
-  //display the results section
-  $('.results').removeClass('hidden');
-} 
+  console.log(responseJson); 
+
+  // map through responseJson.message and assign the img html to each pic
+  const dogArray = responseJson.message.map(pic => `<img src="${pic}" class="results-img">`);
+
+  //replace entire results section with string from dogArray
+  $('.results').html(dogArray.join(''));
+}
+  
+
 
 // EVENT LISTENER FOR FORM
 function handleForm(){
