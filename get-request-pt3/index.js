@@ -11,7 +11,9 @@ function getDogImage(breedInput) {
 function displayResults(responseJson){
   console.log(responseJson); 
   if (responseJson.status === 'error'){
-    alert('Cannot find dog breed.');
+    //alert('Cannot find dog breed.');
+    const breedNotFound ='<p><b>Whoops! We can\'t find that breed.</b></p>';
+    $('.results').html(breedNotFound);
   }
   else {
     const randomDogBreed = `<img src="${responseJson.message}" class="results-img">`;
