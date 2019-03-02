@@ -15,6 +15,7 @@ function displayResults(responseJson){
 
   //replace entire results section with string from dogArray
   $('.results').html(dogArray.join(''));
+  
 }
   
 
