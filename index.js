@@ -17,7 +17,6 @@ function displayResults(responseJson){
   $('.results').html(dogArray.join(''));
   
 }
-  
 
 
 // EVENT LISTENER FOR FORM
